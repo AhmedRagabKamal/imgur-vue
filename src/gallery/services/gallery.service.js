@@ -1,10 +1,10 @@
 import $httpService from '@/http.service';
 import GalleryModel from '@/gallery/models/gallery.model';
+import Endpoints from '@/endpoints.constants';
 
-export function getGalleryImages({ selectedSection, selectedSort, selectedWindow, showViral }) {
-  const requestParams = `/${selectedSection}/${selectedSort}/${selectedWindow}/0?showViral=${showViral}`;
+export function getGalleryImages(filtersData) {
   return $httpService
-    .get(requestParams)
+    .get(Endpoints.GALLERY_LIST(filtersData))
     .then(({ data: { data: images = [] } = [] }) =>
       images
         .filter(gallery => gallery.images && gallery.images.find(img => !img.mp4))
@@ -13,7 +13,9 @@ export function getGalleryImages({ selectedSection, selectedSort, selectedWindow
 }
 
 export function getGalleryImageDetails(imageId) {
-  return $httpService.get(`/album/${imageId}`).then(({ data }) => new GalleryModel(data.data));
+  return $httpService
+    .get(Endpoints.IMAGE_DETAILS(imageId))
+    .then(({ data }) => new GalleryModel(data.data));
 }
 
 export default { getGalleryImages, getGalleryImageDetails };

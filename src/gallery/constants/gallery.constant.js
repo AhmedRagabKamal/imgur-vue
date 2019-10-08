@@ -18,4 +18,8 @@ export const WINDOWS = [
   { label: 'all', value: 'all' }
 ];
 
+export const SECTIONS_DEFAULT = 'hot';
+export const SORTS_DEFAULT = 'viral';
+export const WINDOWS_DEFAULT = 'day';
+
 export default { SECTIONS, SORTS, WINDOWS };

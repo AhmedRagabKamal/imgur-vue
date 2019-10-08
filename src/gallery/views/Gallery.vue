@@ -1,7 +1,7 @@
 <template>
   <div>
     <action-buttons/>
-    <div class="gallery" infinite-scroll-distance="500" v-infinite-scroll="loadMore">
+    <div class="gallery" infinite-scroll-distance="800" v-infinite-scroll="loadMore">
       <router-link
         :to="{name: 'img-details', params: { id: galleryImage.id, galleryImage }}"
         class="gallery__item"
@@ -47,7 +47,7 @@ export default {
     loadMore() {
       const startIndex = this.displayedGalleryImages.length;
       this.displayedGalleryImages.push(
-        ...this.galleryImages.slice(startIndex, startIndex + 12)
+        ...this.galleryImages.slice(startIndex, startIndex + 8)
       );
       return this.displayedGalleryImages;
     },
@@ -60,7 +60,7 @@ export default {
   watch: {
     galleryImages(galleryImages) {
       if (galleryImages.length) {
-        this.displayedGalleryImages = galleryImages.slice(0, 12);
+        this.displayedGalleryImages = galleryImages.slice(0, 8);
       }
     }
   },

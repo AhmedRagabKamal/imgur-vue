@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import { SECTIONS, SORTS, WINDOWS } from '@/gallery/constants/gallery.constant';
+import { SECTIONS, SORTS, WINDOWS, SECTIONS_DEFAULT,
+ SORTS_DEFAULT, WINDOWS_DEFAULT } from '@/gallery/constants/gallery.constant';
 import GroupButtons from '@/components/group-buttons';
 import SwitchInput from '@/components/switch';
 
@@ -36,9 +37,9 @@ export default {
       SORTS,
       WINDOWS,
       filtersData: {
-        selectedSection: 'hot',
-        selectedSort: 'viral',
-        selectedWindow: 'day',
+        selectedSection: SECTIONS_DEFAULT,
+        selectedSort: SORTS_DEFAULT,
+        selectedWindow: WINDOWS_DEFAULT,
         showViral: true
       }
     };

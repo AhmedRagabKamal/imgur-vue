@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 const httpService = axios.create({
-  baseURL: process.env.VUE_APP_BASEURL,
-  headers: { Authorization: 'Client-ID b6d1641389367c5' },
   timeout: 120000,
   cancelable: true
 });
