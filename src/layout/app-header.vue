@@ -15,6 +15,9 @@ export default {
   padding: 20px;
   background-color: #6200ea;
   border-color: #6200ea;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .header__logo {
   color: white;

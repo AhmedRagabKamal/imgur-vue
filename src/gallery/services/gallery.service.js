@@ -5,8 +5,8 @@ export function getGalleryImages({ selectedSection, selectedSort, selectedWindow
   const requestParams = `/${selectedSection}/${selectedSort}/${selectedWindow}/0?showViral=${showViral}`;
   return $httpService
     .get(requestParams)
-    .then(({ data }) =>
-      data.data
+    .then(({ data: { data: images = [] } = [] }) =>
+      images
         .filter(gallery => gallery.images && gallery.images.find(img => !img.mp4))
         .map(gallery => new GalleryModel(gallery))
     );

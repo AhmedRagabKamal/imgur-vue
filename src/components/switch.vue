@@ -1,8 +1,11 @@
 <template>
-  <label class="switch">
-    <input v-bind="$attrs" @click="$emit('checked', !showViral)" type="checkbox">
-    <span class="slider round"></span>
-  </label>
+  <div class="switch__input">
+    <label for="switch" class="switch__input__title">{{title}}</label>
+    <label class="switch" :title="title">
+      <input id="switch" v-bind="$attrs" @click="$emit('checked', !showViral)" type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
 </template>
 
 <script>
@@ -17,17 +20,28 @@ export default {
     showViral: {
       type: Boolean,
       required: true
+    },
+    title: {
+      type: String,
     }
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.switch__input {
+  display: flex;
+  align-items: center;
+  &__title {
+    color: #6200ea;
+  }
+}
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-left: 10px;
 }
 
 .switch input {

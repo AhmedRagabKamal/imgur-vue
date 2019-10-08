@@ -73,7 +73,6 @@ export default {
     max-width: 100%;
     object-fit: cover;
     object-position: top;
-    max-height: 500px;
     margin: auto;
   }
   &__caption {

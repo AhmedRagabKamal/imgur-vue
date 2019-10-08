@@ -13,7 +13,8 @@
     />
     <switch-input
       v-model="filtersData.showViral"
-      :disabled="filtersData.selectedSection !== 'user'"
+      title="show viral"
+      v-if="filtersData.selectedSection === 'user'"
     />
   </div>
 </template>
@@ -60,8 +61,16 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   position: sticky;
-  top: 0;
-  max-width: 1200px;
+  top: 60px;
   margin: 50px auto;
+  background: white;
+  z-index: 1;
+  padding: 10px 60px;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 10px auto;
+    padding: 10px;
+  }
 }
 </style>

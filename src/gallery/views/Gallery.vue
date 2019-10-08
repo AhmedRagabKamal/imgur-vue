@@ -8,6 +8,7 @@
         class="gallery__item"
         v-for="galleryImage in displayedGalleryImages"
         :key="galleryImage.id"
+        :title="galleryImage.title"
       >
         <figure>
           <img
@@ -99,7 +100,7 @@ figure {
     &__img {
       max-width: 100%;
       object-fit: cover;
-      max-height: 300px;
+      height: 300px;
       object-position: top;
       width: 400px;
     }

@@ -33,7 +33,7 @@ export default {
 .btn-group button {
   border: 1px solid #6200ea; /* Green border */
   color: #6200ea; /* White text */
-  padding: 10px 24px; /* Some padding */
+  padding: 10px 20px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
   outline: 0;
@@ -66,5 +66,10 @@ export default {
 .btn-group button.active {
   background-color: #6200ea;
   color: white;
+}
+@media screen and (max-width: 600px) {
+  .btn-group button {
+    margin-bottom: 10px;
+  }
 }
 </style>
