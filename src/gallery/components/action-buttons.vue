@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="action-container">
     <group-buttons :actions="SECTIONS" v-model="filtersData.selectedSection"/>
     <group-buttons
       :actions="SORTS"
@@ -57,19 +57,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+@import "~@/assets/scss/_variables.scss";
+
+.action-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   position: sticky;
   top: 60px;
   margin: 50px auto;
-  background: white;
+  background: $secondaryColor;
   z-index: 1;
   padding: 10px 60px;
 }
 @media screen and (max-width: 600px) {
-  .container {
+  .action-container {
     margin: 10px auto;
     padding: 10px;
   }

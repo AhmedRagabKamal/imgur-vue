@@ -1,12 +1,5 @@
 import { get } from 'lodash-es';
-
-function getSmallImageWidth({ images }) {
-  return images.reduce((prev, curr) => (prev.width < curr.width ? prev : curr));
-}
-
-function getBigImageWidth({ images }) {
-  return images.reduce((prev, curr) => (prev.width > curr.width ? prev : curr));
-}
+import { getSmallImageWidth, getBigImageWidth } from '@/gallery/services/gallery.service';
 
 class GalleryModel {
   constructor(data = {}) {

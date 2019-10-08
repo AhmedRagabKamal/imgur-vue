@@ -80,7 +80,6 @@ figure {
   margin-inline-start: 0;
   margin-inline-end: 0;
 }
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

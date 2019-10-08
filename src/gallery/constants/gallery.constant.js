@@ -22,4 +22,4 @@ export const SECTIONS_DEFAULT = 'hot';
 export const SORTS_DEFAULT = 'viral';
 export const WINDOWS_DEFAULT = 'day';
 
-export default { SECTIONS, SORTS, WINDOWS };
+export default { SECTIONS, SORTS, WINDOWS, SECTIONS_DEFAULT, SORTS_DEFAULT, WINDOWS_DEFAULT };
