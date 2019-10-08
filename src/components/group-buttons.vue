@@ -1,6 +1,7 @@
 <template>
   <div class="btn-group">
     <button
+      tabindex="0"
       v-for="action in actions"
       :key="action.label"
       @click="$emit('actionClicked', action.value)"
@@ -63,6 +64,7 @@ export default {
 /* Add a background color on hover */
 .btn-group button:hover,
 .btn-group button:active,
+.btn-group button:focus,
 .btn-group button.active {
   background-color: #6200ea;
   color: white;

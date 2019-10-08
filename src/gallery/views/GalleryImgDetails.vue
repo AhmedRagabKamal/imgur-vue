@@ -22,7 +22,7 @@
         <span>{{imageDetails.score}}</span>
       </div>
       <div class="image__analytics__item">
-        <svg-icon color="#6200ea" name="eye" original scale="1"></svg-icon>
+        <svg-icon color="#6200ea" name="eye-stroke" original scale="2"></svg-icon>
         <span>{{imageDetails.views}}</span>
       </div>
     </div>
@@ -33,7 +33,7 @@
 import '@/svg/upload';
 import '@/svg/download';
 import '@/svg/star';
-import '@/svg/eye';
+import '@/svg/eye-stroke';
 
 export default {
   name: 'GalleryImgDetails',

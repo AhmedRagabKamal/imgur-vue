@@ -3,12 +3,12 @@
     <action-buttons/>
     <div class="gallery" infinite-scroll-distance="500" v-infinite-scroll="loadMore">
       <router-link
-        tag="div"
         :to="{name: 'img-details', params: { id: galleryImage.id, galleryImage }}"
         class="gallery__item"
         v-for="galleryImage in displayedGalleryImages"
         :key="galleryImage.id"
         :title="galleryImage.title"
+        tabindex="0"
       >
         <figure>
           <img
@@ -63,7 +63,7 @@ export default {
         this.displayedGalleryImages = galleryImages.slice(0, 12);
       }
     }
-  }
+  },
 };
 
 </script>

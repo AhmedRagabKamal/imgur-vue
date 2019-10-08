@@ -2,8 +2,14 @@
   <div class="switch__input">
     <label for="switch" class="switch__input__title">{{title}}</label>
     <label class="switch" :title="title">
-      <input id="switch" v-bind="$attrs" @click="$emit('checked', !showViral)" type="checkbox">
-      <span class="slider round"></span>
+      <input
+        aria-label="switch"
+        id="switch"
+        v-bind="$attrs"
+        @click="$emit('checked', !showViral)"
+        type="checkbox"
+      >
+      <span tabindex="0" class="slider round"></span>
     </label>
   </div>
 </template>
