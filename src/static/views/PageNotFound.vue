@@ -10,12 +10,13 @@
 
 <script>
 import PageNotFoundImage from '@/assets/images/404.png';
+
 export default {
   name: 'PageNotFound',
   data() {
     return {
      PageNotFoundImage,
-    }
+    };
   },
 };
 </script>

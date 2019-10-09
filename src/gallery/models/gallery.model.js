@@ -1,5 +1,5 @@
 import { get } from 'lodash-es';
-import { getSmallImageWidth, getBigImageWidth } from '@/gallery/services/gallery.service';
+import { getSmallImageWidth, getBigImageWidth } from '@/utils/utils.service';
 
 class GalleryModel {
   constructor(data = {}) {

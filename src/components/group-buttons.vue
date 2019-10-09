@@ -1,10 +1,11 @@
 <template>
   <div class="btn-group">
     <button
+      class="btn-group__button"
       tabindex="0"
       v-for="action in actions"
       :key="action.label"
-      @click="$emit('actionClicked', action.value)"
+      @click="$emit('action-clicked', action.value)"
       :class="{'active': section === action.value}"
     >{{action.label}}</button>
   </div>
@@ -15,7 +16,7 @@ export default {
   name: 'GroupButtons',
   model: {
     prop: 'section',
-    event: 'actionClicked',
+    event: 'action-clicked',
   },
   props: {
     actions: {
@@ -31,43 +32,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-group button {
-  border: 1px solid #6200ea; /* Green border */
-  color: #6200ea; /* White text */
-  padding: 10px 20px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
-  outline: 0;
-}
+@import "~@/assets/scss/_variables.scss";
 
-.btn-group button:first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.btn-group button:last-child {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  &__button {
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: 0;
+  }
+  &__button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  &__button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 }
 
 .btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+  border-right: none;
 }
 
-/* Add a background color on hover */
 .btn-group button:hover,
 .btn-group button:active,
 .btn-group button:focus,
 .btn-group button.active {
-  background-color: #6200ea;
-  color: white;
+  background-color: $primaryColor;
+  color: $secondaryColor;
 }
 @media screen and (max-width: 600px) {
   .btn-group button {

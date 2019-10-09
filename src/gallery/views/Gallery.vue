@@ -69,6 +69,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/scss/_variables.scss";
+
 *,
 *:before,
 *:after {
@@ -111,7 +113,7 @@ figure {
       width: 100%;
       transition: 0.5s ease;
       opacity: 0;
-      color: white;
+      color: $secondaryColor;
       padding: 10px;
       text-align: center;
     }

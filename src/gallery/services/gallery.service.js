@@ -18,12 +18,4 @@ export function getGalleryImageDetails(imageId) {
     .then(({ data }) => new GalleryModel(data.data));
 }
 
-export function getSmallImageWidth({ images }) {
-  return images.reduce((prev, curr) => (prev.width < curr.width ? prev : curr));
-}
-
-export function getBigImageWidth({ images }) {
-  return images.reduce((prev, curr) => (prev.width > curr.width ? prev : curr));
-}
-
-export default { getGalleryImages, getGalleryImageDetails, getSmallImageWidth, getBigImageWidth };
+export default { getGalleryImages, getGalleryImageDetails };

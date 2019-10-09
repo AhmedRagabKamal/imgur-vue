@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const app = express();
 const axios = require('axios');
+
 const port = process.env.PORT || 3000;
 
 app.use(express.static('./public'));
@@ -18,7 +20,7 @@ app.use((req, res, next) => {
 async function callApiUrl(url, res) {
   try {
     const { data } = await axios.get(url, {
-      headers: { Authorization: 'Client-ID b6d1641389367c5' }
+      headers: { Authorization: 'Client-ID 1e91e6f72f69f8a' }
     });
     res.status(200).send(data);
   } catch (error) {
@@ -32,7 +34,7 @@ app.get('/:id', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  let fullUrl = `https://api.imgur.com/3/gallery${req.url}`;
+  const fullUrl = `https://api.imgur.com/3/gallery${req.url}`;
   callApiUrl(fullUrl, res);
 });
 

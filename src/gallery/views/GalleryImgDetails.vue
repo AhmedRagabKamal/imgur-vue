@@ -61,8 +61,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/scss/_variables.scss";
+
 .image {
-  border: 1px solid #6200ea;
+  border: 1px solid $primaryColor;
   max-width: 800px;
   margin: 40px auto;
   &__title {
@@ -90,7 +92,7 @@ export default {
     justify-content: space-evenly;
     align-items: center;
     padding: 10px;
-    border-top: 1px dashed #6200ea;
+    border-top: 1px dashed $primaryColor;
     &__item {
       display: flex;
       flex-direction: column;
