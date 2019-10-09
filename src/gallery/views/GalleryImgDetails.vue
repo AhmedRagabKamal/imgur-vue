@@ -1,30 +1,35 @@
 <template>
-  <div class="image">
-    <h2 class="image__title">{{imageDetails.title}}</h2>
-    <figure>
-      <img class="image__img" :src="imageDetails.bigImage" :alt="imageDetails.title">
-      <figcaption class="image__caption">{{imageDetails.title}}</figcaption>
-    </figure>
-    <div class="image__details">
-      <p class="image__details__description">{{imageDetails.description}}</p>
+  <div class="image-wrapper">
+    <div class="image">
+      <h2 class="image__title">{{imageDetails.title}}</h2>
+      <figure>
+        <img class="image__img" :src="imageDetails.bigImage" :alt="imageDetails.title">
+        <figcaption class="image__caption">{{imageDetails.title}}</figcaption>
+      </figure>
+      <div class="image__details">
+        <p class="image__details__description">{{imageDetails.description}}</p>
+      </div>
+      <div class="image__analytics">
+        <div class="image__analytics__item">
+          <svg-icon color="#6200ea" name="upload" original scale="1"></svg-icon>
+          <span>{{imageDetails.ups}}</span>
+        </div>
+        <div class="image__analytics__item">
+          <svg-icon color="#6200ea" name="download" original scale="1"></svg-icon>
+          <span>{{imageDetails.downs}}</span>
+        </div>
+        <div class="image__analytics__item">
+          <svg-icon color="#6200ea" name="star" original scale="1"></svg-icon>
+          <span>{{imageDetails.score}}</span>
+        </div>
+        <div class="image__analytics__item">
+          <svg-icon color="#6200ea" name="eye-stroke" original scale="2"></svg-icon>
+          <span>{{imageDetails.views}}</span>
+        </div>
+      </div>
     </div>
-    <div class="image__analytics">
-      <div class="image__analytics__item">
-        <svg-icon color="#6200ea" name="upload" original scale="1"></svg-icon>
-        <span>{{imageDetails.ups}}</span>
-      </div>
-      <div class="image__analytics__item">
-        <svg-icon color="#6200ea" name="download" original scale="1"></svg-icon>
-        <span>{{imageDetails.downs}}</span>
-      </div>
-      <div class="image__analytics__item">
-        <svg-icon color="#6200ea" name="star" original scale="1"></svg-icon>
-        <span>{{imageDetails.score}}</span>
-      </div>
-      <div class="image__analytics__item">
-        <svg-icon color="#6200ea" name="eye-stroke" original scale="2"></svg-icon>
-        <span>{{imageDetails.views}}</span>
-      </div>
+    <div class="link">
+      <router-link class="link__gallery" :to="{name: 'gallery'}">Back to gallery</router-link>
     </div>
   </div>
 </template>
@@ -62,7 +67,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/scss/_variables.scss";
-
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .image {
   border: 1px solid $primaryColor;
   max-width: 800px;
@@ -98,6 +107,14 @@ export default {
       flex-direction: column;
       align-items: center;
     }
+  }
+}
+.link {
+  &__gallery {
+    font-size: 1.5rem;
+    color: $primaryColor;
+    text-decoration: none;
+    cursor: pointer;
   }
 }
 </style>

@@ -1,9 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const app = express();
 const axios = require('axios');
-
+const apiConstant = 'https://api.imgur.com/3/gallery';
 const port = process.env.PORT || 3000;
 
 app.use(express.static('./public'));
@@ -29,12 +28,12 @@ async function callApiUrl(url, res) {
 }
 
 app.get('/:id', (req, res) => {
-  const fullUrl = `https://api.imgur.com/3/gallery/album/${req.params.id}`;
+  const fullUrl = `${apiConstant}/album/${req.params.id}`;
   callApiUrl(fullUrl, res);
 });
 
 app.get('*', (req, res) => {
-  const fullUrl = `https://api.imgur.com/3/gallery${req.url}`;
+  const fullUrl = `${apiConstant}${req.url}`;
   callApiUrl(fullUrl, res);
 });
 

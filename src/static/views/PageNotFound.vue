@@ -37,6 +37,7 @@ export default {
     font-size: 1.5rem;
     color: $primaryColor;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 </style>
